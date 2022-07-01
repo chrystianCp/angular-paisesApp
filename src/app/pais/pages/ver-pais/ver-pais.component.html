@@ -1,0 +1,56 @@
+<div *ngIf="!pais; else divPais"
+     class="alert alert-info">
+    Espere por favor...
+</div>
+
+
+<ng-template #divPais>
+    
+    <div class="row">
+        <div class="col-12">
+            <h1>Pais: <small>{{pais[0].name.common}}</small></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais[0].flags.png" class="img-thumbnail" alt="">            
+        </div>
+        <div class="col">
+            <h3>Informacion</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Poblacion: </strong>{{pais[0].population | number }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Codigo numerico: </strong>{{pais[0].ccn3 }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Codigo cca3: </strong>{{pais[0].cca3 }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Traducciones</h3>
+
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary mr-1">{{pais[0].translations['ara'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['ces'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['deu'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['fra'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['hrv'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['ita'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['jpn'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['kor'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['por'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['rus'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['spa'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['urd'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais[0].translations['zho'].common}}</span>
+        </div>
+    </div>
+
+</ng-template>
